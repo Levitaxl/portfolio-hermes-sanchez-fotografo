@@ -1,0 +1,855 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --text-dark: #000000;
+  --text-light: #767268;
+  /*--extra-light: #eef9f8;*/
+  --extra-light:rgb(240, 240, 240);
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Playfair Display", serif;
+}
+
+.button-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.whatsapp-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.whatsapp-content i {
+    font-size: 50px;
+    color: #25d366;
+    filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
+}
+
+.whatsapp-text {
+    background-color: #25d366;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    display: none; /* Se puede mostrar con hover o JS */
+}
+
+.button-whatsapp:hover .whatsapp-text {
+    display: block;
+}
+
+
+h1, h2, .section__header, .btn {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase; /* Hace que todo sea mayúsculas */
+    letter-spacing: 2px;       /* Añade espacio entre letras como en la imagen */
+    font-weight: 400;          /* Peso fino/normal para mayor elegancia */
+    color: #000;               /* Color negro puro */
+}
+
+h3{
+  font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase; /* Hace que todo sea mayúsculas */
+    letter-spacing: 2px;       /* Añade espacio entre letras como en la imagen */
+    font-weight: 400;          /* Peso fino/normal para mayor elegancia */
+}
+
+/* Si quieres que el botón también use esta fuente */
+.btn {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 1px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color:var(--extra-light);
+}
+
+nav{
+  background-color: white;
+}
+
+.section__container {
+  margin: auto;
+}
+
+
+.section__header {
+  position: relative;
+  isolation: isolate;
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;  
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  text-align: center;
+}
+
+
+.btn {
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  color: var(--white);
+  background-color: var(--text-dark);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--text-light);
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  position: relative; /* Cambiado de fixed/absolute a relative */
+  width: 100%;
+  z-index: 9;
+ /* background-color: var(--extra-light);*/ /* Para que tenga fondo sólido */
+  display: flex;
+  flex-direction: column; /* Para apilar logo y links en móvil */
+  align-items: center;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--extra-light);
+}
+
+.nav__logo img {
+  max-width: 125px;
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.nav__title{
+  display: none;
+}
+
+
+
+.nav__links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--extra-light);
+  transition: transform 0.5s;
+  z-index: -1;
+}
+
+.nav__links.open {
+  transform: translateY(100%);
+}
+
+.nav__links a {
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.header__container {
+  display: grid;
+  padding-block: 0;
+  overflow: hidden;
+}
+
+.header__content {
+  padding-block: 0 5rem;
+}
+
+.header__content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.header__content h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.header__btn {
+  text-align: center;
+}
+
+.about__container {
+  display: grid;
+  /*gap: 2rem;*/
+  overflow: hidden;
+    max-width: 800px;
+
+}
+
+.about__image img {
+  max-width: 300px;
+  margin-inline: auto;
+}
+
+.about__content .section__header {
+  margin-bottom: 1.5rem;
+}
+
+.about__content p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  line-height: 1.75rem;
+  text-align: center;
+}
+
+.about__btn {
+  text-align: center;
+}
+
+.blog__container .section__header {
+  margin-bottom: 4rem;
+}
+
+.blog__grid {
+  margin-bottom: 4rem;
+  display: grid;
+  gap: 3rem 2rem;
+}
+
+.blog__card h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.blog__card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  font-family: var(--header-font);
+}
+
+.blog__card p {
+  line-height: 1.75rem;
+  color: var(--text-light);
+}
+
+.blog__btn {
+  text-align: center;
+}
+
+.contact {
+  background-color: var(--extra-light);
+  
+}
+
+.contact__container {
+  padding-block: 0;
+  display: grid;
+  gap: 2rem;
+  max-width: 800px;
+}
+
+.contact__content {
+  padding-block: 5rem;
+}
+
+.contact__content .section__header {
+  margin-bottom: 2rem;
+}
+
+.contact__content p {
+  margin-bottom: 2rem;
+  line-height: 1.75rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.contact__content input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--text-light);
+  font-size: 1rem;
+  color: var(--text-light);
+  background-color: transparent;
+}
+
+.contact__content .btn {
+  margin-top: 2rem;
+}
+
+.contact__image {
+  display: none;
+}
+
+.footer__container {
+  display: grid;
+  gap: 4rem;
+}
+
+.footer__col .section__header {
+  margin-inline-start: unset;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.footer__col p {
+  line-height: 1.75rem;
+  color: var(--text-light);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__socials a {
+  padding: 5px 9px;
+  font-size: 1.25rem;
+  color: var(--text-light);
+  border-radius: 100%;
+}
+
+.footer__socials a:hover {
+  background-color: var(--extra-light);
+}
+
+.footer__bar {
+  padding: 1rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenedor */
+  align-items: center;     /* Centra verticalmente */
+  padding: 2rem 0;         /* Espaciado arriba y abajo */
+  text-align: center;      /* Asegura que el texto interno también se centre */
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;  /* Apila el título sobre los iconos */
+  align-items: center;     /* Centra los elementos hijos */
+  gap: 1rem;               /* Espacio entre el título y las redes sociales */
+}
+
+.footer__socials {
+  list-style: none;        /* Quita los puntos de la lista */
+  display: flex;
+  gap: 1.5rem;             /* Espacio entre los iconos */
+  padding: 0;
+  margin: 0;
+}
+
+.footer__socials li a {
+  font-size: 1.5rem;       /* Tamaño de los iconos */
+  text-decoration: none;
+}
+
+@media (width > 540px) {
+  .header__content h1 {
+    font-size: 4.75rem;
+  }
+
+
+  .input__row {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 768px) {
+  nav {
+    position: relative; /* Asegúrate de que no sea absolute */
+    left: 0;
+    transform: none;
+    max-width: 100%; /* Que ocupe todo el ancho */
+    padding: 0.5rem 0;
+    flex-direction: column; /* Logo arriba, links abajo como en la imagen */
+  }
+
+  .nav__header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__title{
+    display: block;
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    width: fit-content;
+    flex-direction: row;
+    background-color: transparent;
+    transform: none !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+  }
+
+  .nav__links a:hover {
+    color: var(--text-dark);
+  }
+
+  .header__content {
+    padding-block: 10rem;
+  }
+
+  .header__content :is(h1, h2, .header__btn) {
+    text-align: left;
+  }
+
+  .header__content h1 {
+    font-size: 5rem;
+  }
+
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 15px;
+  }
+
+  .about__content {
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  .about__content .section__header {
+    margin-inline-start: unset;
+  }
+
+  .about__content :is(p, .about__btn) {
+    text-align: left;
+  }
+
+
+  .blog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog__btn {
+    text-align: left;
+  }
+
+  .contact__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact__content .section__header {
+    margin-inline-start: unset;
+  }
+
+  .contact__content p {
+    text-align: left;
+  }
+
+  .contact__image {
+    display: flex;
+    position: relative;
+    isolation: isolate;
+  }
+
+  .contact__image img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 450px;
+  }
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (width > 1024px) {
+  .header__content {
+    padding-block: 15rem 12rem;
+  }
+
+}
+
+
+.gallery-container {
+  display: grid;
+  /* Creamos 2 columnas iguales y 2 filas */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 300px 300px; 
+  gap: 15px; /* Espacio entre las fotos */
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.item {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Serif', Georgia, serif; /* Fuente elegante como la de la imagen */
+  font-size: 2rem;
+}
+
+/* Configuración de las áreas */
+.turismo {
+  grid-column: 1;
+  grid-row: 1;
+  background-image: url('assets/turismo/1.-\ Chuao/1_1.jpg');
+}
+
+.inmobiliaria {
+  grid-column: 1;
+  grid-row: 2;
+  background-image: url('assets/inmobiliaria/IMG_3279.JPG');
+}
+
+.retrato {
+  grid-column: 2;
+  grid-row: 1 / span 2; /* Esto hace que ocupe las dos filas */
+  background-image: url('assets/retratos/_MG_0685-Mejorado-NR.JPG');
+}
+
+/* Efecto de texto (opcional) */
+.item span {
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- ESTADO POR DEFECTO (Móvil: Una sola columna) --- */
+.gallery-container {
+  display: block; /* Forzamos flujo vertical */
+  padding: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  position: relative;
+  width: 100%;       /* Ocupa todo el ancho en móvil */
+  height: 300px;     /* Altura en móvil */
+  margin-bottom: 15px;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Serif', Georgia, serif;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+/* --- ESTADO ESCRITORIO (A partir de 768px) --- */
+@media (min-width: 768px) {
+  .gallery-container {
+    display: grid; /* Activamos el grid solo aquí */
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 350px 350px;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .item {
+    margin-bottom: 0; /* Quitamos el margen del móvil porque el grid usa 'gap' */
+    height: auto;     /* Dejamos que el grid controle la altura */
+  }
+
+  .turismo {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .inmobiliaria {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .retrato {
+    grid-column: 2;
+    grid-row: 1 / span 2; /* Ocupa las dos filas */
+  }
+}
+
+.item {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  filter: brightness(0.9);
+}
+
+.item:hover {
+  transform: scale(1.02); /* Crece un poquito */
+  filter: brightness(1.1); /* Se ilumina */
+  z-index: 2;
+}
+
+.portfolio__grid {
+  /* Configuración base para escritorio */
+  column-count: 3; 
+  column-gap: 1.5rem; /* Espacio horizontal entre columnas */
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.portfolio__grid img {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem; /* Espacio vertical entre imágenes */
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  break-inside: avoid; 
+}
+
+/* --- Media Queries para adaptabilidad --- */
+
+/* Tablets (Pantallas menores a 992px) */
+@media (max-width: 992px) {
+  .portfolio__grid {
+    column-count: 2; /* Bajamos a 2 columnas */
+  }
+}
+
+/* Móviles (Pantallas menores a 600px) */
+@media (max-width: 600px) {
+  .portfolio__grid {
+    column-count: 1; /* Una sola columna para que las fotos se vean grandes */
+    column-gap: 0;
+  }
+  
+  .portfolio__grid img {
+    margin-bottom: 1rem;
+  }
+}
+
+
+/* La imagen dentro del Lightbox */
+.lightbox__content {
+  /* Elimina object-fit para no deformar ni recortar */
+  width: auto; 
+  height: auto;
+  
+  /* Asegura que no se salga de la pantalla pero mantenga su forma */
+  max-width: 95vw; 
+  max-height: 95vh;
+  
+  display: block;
+  border-radius: 2px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+  
+  /* Animación suave */
+  animation: fadeIn 0.4s ease-out;
+  user-select: none; /* Evita que se seleccione el texto azul al hacer click */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Ajuste del contenedor para centrado perfecto */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999; /* Asegúrate de que esté por encima de todo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95); /* Fondo más oscuro para resaltar la foto */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.lightbox__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox__btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* En móviles, hacemos las flechas más pequeñas para no tapar la foto */
+@media (max-width: 600px) {
+  .lightbox__btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+
+/* Efecto para las fotos de la galería */
+.portfolio__grid img {
+  cursor: pointer; /* Muestra la manito */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
+  will-change: transform; /* Optimiza la animación para el navegador */
+}
+
+.portfolio__grid img:hover {
+  transform: scale(1.03); /* Un zoom muy sutil para no romper el mosaico */
+  filter: brightness(1.1); /* Ilumina ligeramente la foto */
+  z-index: 10; /* Asegura que la foto que crece se vea por encima de las otras */
+}
+
+
+.travel__sessions {
+  display: flex;
+  flex-direction: column; /* Lista vertical de banners horizontales */
+  gap: 20px;
+  padding: 20px 0;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.session__card {
+  position: relative;
+  width: 100%;
+  height: 250px; /* Altura de la portada horizontal */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.session__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* El texto en el medio */
+.session__overlay {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+.session__overlay h3 {
+  font-family: var(--header-font);
+  font-size: 2.5rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Tu efecto de "Hundido" aplicado a la portada */
+.session__card:hover img {
+  transform: scale(0.96); /* Se va hacia adentro */
+  filter: brightness(0.7); /* Se oscurece para resaltar el texto */
+}
+
+.session__card {
+  height: 400px;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .session__card {
+    height: 400px;
+  }
+  .session__overlay h3 {
+    font-size: 1.5rem;
+  }
+}

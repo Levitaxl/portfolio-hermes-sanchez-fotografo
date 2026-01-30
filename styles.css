@@ -571,19 +571,19 @@ footer {
 .turismo {
   grid-column: 1;
   grid-row: 1;
-  background-image: url('assets/turismo/1.-\ Chuao/1_1.jpg');
+  background-image: url('./assets/turismo/Chuao/1_1.jpg');
 }
 
 .inmobiliaria {
   grid-column: 1;
   grid-row: 2;
-  background-image: url('assets/inmobiliaria/IMG_3279.JPG');
+  background-image: url('./assets/inmobiliaria/IMG_3279.JPG');
 }
 
 .retrato {
   grid-column: 2;
   grid-row: 1 / span 2; /* Esto hace que ocupe las dos filas */
-  background-image: url('assets/retratos/MG_0685-Mejorado-NR.JPG');
+  background-image: url('./assets/retratos/MG_0685-Mejorado-NR.JPG');
 }
 
 /* Efecto de texto (opcional) */

@@ -583,7 +583,7 @@ footer {
 .retrato {
   grid-column: 2;
   grid-row: 1 / span 2; /* Esto hace que ocupe las dos filas */
-  background-image: url('assets/retratos/_MG_0685-Mejorado-NR.JPG');
+  background-image: url('assets/retratos/MG_0685-Mejorado-NR.JPG');
 }
 
 /* Efecto de texto (opcional) */

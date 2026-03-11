@@ -1,0 +1,620 @@
+html {
+    scroll-behavior: smooth;
+    /* Esto añade un margen para que el título no quede pegado al borde superior */
+    scroll-padding-top: 80px; 
+}
+
+/* Estilos Globales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color:white!important;
+    
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px 0;
+    background: black;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin-right: 50px;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: gray;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: white; /* Un verde sutil como el de la línea */
+}
+
+/* Contenedor Principal */
+.biography-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    padding: 20px auto;
+}
+
+
+.bio-title {
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.title-underline {
+    width: 40px;
+    height: 2px;
+    background-color: #7a9a8a;
+    margin-bottom: 30px;
+}
+
+.image-wrapper {
+    background-color: #eee;
+    padding: 15px; /* Crea el efecto de marco de la imagen */
+    display: inline-block;
+}
+
+.image-wrapper img {
+    display: block;
+    max-width: 100%;
+    filter: grayscale(100%); /* Para el look blanco y negro industrial */
+}
+
+/* Columnas de Texto */
+.bio-text {
+    flex: 1.5;
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+.bio-text p {
+    margin-bottom: 20px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .biography-container {
+        flex-direction: column;
+    }
+    .navbar ul {
+        justify-content: center;
+        margin-right: 0;
+        padding: 0;
+    }
+}
+
+/* Sección Series */
+.series-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.series-header {
+    margin-bottom: 40px;
+}
+
+.series-title {
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+/* Grid de 3 columnas */
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Tarjetas */
+.series-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.series-image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantiene las imágenes cuadradas si lo deseas */
+    overflow: hidden;
+    background-color: #f0f0f0;
+    margin-bottom: 15px;
+}
+
+.series-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.series-card:hover img {
+    transform: scale(1.05); /* Efecto sutil de zoom */
+}
+
+/* Tipografía de la serie */
+.author-name {
+    font-size: 0.9rem;
+    color: #7a9a8a; /* El verde de identidad */
+    margin: 0;
+    font-weight: 600;
+}
+
+.project-title {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 2px 0 15px 0;
+}
+
+.project-description {
+    font-size: 0.85rem;
+    color: #a7a7a7;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .series-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .series-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sección Books */
+.books-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.books-header {
+    margin-bottom: 40px;
+}
+
+.books-title {
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Grid de 4 columnas */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor de la portada */
+.book-cover {
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Proporción vertical típica de libros */
+    background-color: #f5f5f5;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra suave para dar relieve al libro */
+    transition: transform 0.3s ease;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que se vea toda la portada sin recortes */
+    padding: 10px; /* Espacio para que no toque los bordes si quieres efecto marco */
+}
+
+.book-card:hover .book-cover {
+    transform: translateY(-5px); /* Pequeño levante al pasar el mouse */
+}
+
+/* Textos */
+.book-info .author-name {
+    font-size: 0.85rem;
+    color: #7a9a8a;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.book-info .book-title {
+    font-size: 0.9rem;
+    color: #444;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.book-info .book-meta {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sección Contacto */
+.contact-section {
+    max-width: 1200px;
+    margin: 100px auto 40px;
+    padding: 0 20px;
+}
+
+.contact-container {
+    display: flex;
+    gap: 80px;
+}
+
+/* Estilos del Formulario */
+.contact-form {
+    flex: 2;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+    outline: none;
+    color:white;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-bottom: 1px solid #7a9a8a; /* Color verde de tu marca */
+}
+
+.submit-btn {
+    background-color: #333;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #7a9a8a;
+}
+
+/* Información de contacto */
+.contact-info {
+    flex: 1;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.info-block {
+    margin-bottom: 30px;
+}
+
+.info-block h4 {
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.studio-note {
+    font-style: italic;
+    font-size: 0.85rem;
+    border-left: 2px solid #7a9a8a;
+    padding-left: 15px;
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.75rem;
+    color: #aaa;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+/* Sección Interviews */
+.interviews-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.interviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* Contenedor de imagen tipo Video */
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    overflow: hidden;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    opacity: 0.9;
+    background: rgba(255, 0, 0, 0.7); /* Estilo YouTube sutil */
+    padding: 5px 15px;
+    border-radius: 8px;
+}
+
+.video-thumbnail:hover img {
+    opacity: 1;
+}
+
+/* Textos de la entrevista */
+.interview-content {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: white;
+}
+
+.interview-main-title {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.interview-location {
+    color: #7a9a8a; /* Tu verde de identidad */
+    font-weight: 500;
+}
+
+.divider {
+    display: block;
+    margin: 5px 0;
+    color: #ccc;
+}
+
+.interview-date {
+    margin-bottom: 10px;
+    color: #a7a7a7;
+}
+
+.interview-desc {
+    font-size: 0.8rem;
+    color: white;
+    text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .interviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .interviews-grid { grid-template-columns: 1fr; }
+}
+
+/* Hero Header Principal */
+.hero-header {
+    width: 100%;
+    background-color: black;
+    padding: 40px 0;
+    margin-bottom: 20px;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Alinea el texto verticalmente con la imagen */
+    padding: 0 20px;
+}
+
+.hero-image {
+    flex: 1.2; /* Toma un poco más de espacio que el texto */
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.hero-brand {
+    flex: 1;
+    padding-left: 60px; /* Espacio entre imagen y texto */
+}
+
+.brand-name {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 0.9;
+    color: white; /* Gris similar al de la captura */
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.brand-name span {
+    font-weight: 600; /* Hace el apellido un poco más fuerte */
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-brand {
+        padding-left: 0;
+        margin-top: 30px;
+    }
+    
+    .brand-name {
+        font-size: 2.5rem;
+    }
+}
+
+/* Contenedor general del módulo */
+.biography-module {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 0 20px;
+}
+
+/* Estilos del encabezado (Título arriba) */
+.bio-header {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.bio-title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.title-underline {
+    width: 45px;
+    height: 2px;
+    background-color: #7a9a8a; /* Tu color verde de acento */
+}
+
+/* Contenedor de las columnas inferiores */
+.biography-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+
+.image-wrapper {
+    background-color: #eee;
+    padding: 15px; 
+    display: inline-block;
+}
+
+.image-wrapper img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%); 
+}
+
+.bio-content-grid {
+    flex: 2;
+    display: flex;
+    gap: 30px;
+}
+
+.bio-text {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: white;
+    text-align: justify;
+}
+
+@media (max-width: 900px) {
+    .biography-container, .bio-content-grid {
+        flex-direction: column;
+    }
+    
+    .bio-sidebar {
+        margin-bottom: 30px;
+    }
+}
+
+/* Localiza o añade esta regla en tu CSS */
+#bio-img {
+    display: block;
+    max-width: 100%; /* Asegura que no se salga de ancho */
+    height: 300px;   /* <--- Ajusta este valor para cambiar la altura */
+    object-fit: cover; /* Corta la imagen sutilmente para que llene el espacio sin estirarse */
+    filter: grayscale(100%); 
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* Si quieres que el marco gris también se ajuste automáticamente */
+.image-wrapper {
+    background-color: #eee;
+    padding: 15px; 
+    display: inline-block;
+    line-height: 0; /* Evita espacios extra debajo de la imagen */
+}

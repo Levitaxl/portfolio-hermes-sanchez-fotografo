@@ -1166,3 +1166,49 @@ body {
     margin-left:auto;
     margin-right:auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer-col-social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer-col-social-media a {
+    color: #ffffff;      /* Color blanco por defecto */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+
+  /* Efecto Hover: Gris suave */
+  .footer-col-social-media a:hover {
+    color: #7a9a8a; /* Tu verde al pasar el mouse */
+  }
+
+  /* Responsive: En pantallas pequeñas los iconos pueden ser un poco más grandes para facilitar el toque */
+  @media (max-width: 600px) {
+    .footer-col-social-media a {
+      font-size: 28px;
+    }
+  }

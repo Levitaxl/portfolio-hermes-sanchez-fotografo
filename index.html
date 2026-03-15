@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Módulo Biografía - Hermes Sánchez</title>
     <link rel="stylesheet" href="style.css">
+     <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 </head>
 <body>
 
     <header class="navbar">
     <nav>
         <ul>
+            <li><a href="#" class="nav-link">INICIO</a></li>
             <li><a href="#series" class="nav-link">SERIES</a></li>
             <li><a href="#biografia" class="nav-link">BIOGRAFÍA</a></li>
             <li><a href="#contacto" class="nav-link">CONTACTO</a></li>
@@ -40,16 +45,18 @@
       </div>
 
       <div class="series-grid">
-          <article class="series-card centered-card">
-              <div class="series-image-container">
-                  <img src="/assets/PesoDelAireEnLaHabitación/IMG_4445-2.JPG" alt="Tainted Sky">
-              </div>
-              <div class="series-content">
-                  <h3 class="author-name">Hermes Sánchez</h3>
-                  <p class="project-title">El peso del aire en la habitación, 2025</p>
-                  <p class="project-description">The year 2020 was heavily marked by the appearance of the Covid 19.</p>
-              </div>
-          </article>
+        <a href="/series/peso-del-aire-en-la-habitacion.html" class="series-card-link" style="text-decoration: none; color: inherit;">
+            <article class="series-card centered-card">
+                <div class="series-image-container">
+                <img src="/assets/PesoDelAireEnLaHabitación/IMG_4445-2.JPG" alt="Tainted Sky">
+                </div>
+                <div class="series-content">
+                <h3 class="author-name">Hermes Sánchez</h3>
+                <p class="project-title">El peso del aire en la habitación, 2025</p>
+                <p class="project-description">The year 2020 was heavily marked by the appearance of the Covid 19.</p>
+                </div>
+            </article>
+        </a>
 
           <article class="series-card">
               <div class="series-image-container">
@@ -268,10 +275,34 @@
     </div>
 </section>
 
-<footer class="main-footer">
-    <p>&copy; 2026 Hermes Sánchez. All rights reserved.</p>
+<footer class="agency-footer">
+    <div class="footer-content">
+
+        <div class="footer-col">
+            <hr class="footer-divider">
+            <ul class="footer-links">
+                <li><a href="../index.html#series">SERIES</a></li>
+                <li><a href="../index.html#biografia">BIOGRAFÍA</a></li>
+                <li><a href="../index.html#contacto">CONTACTO</a></li>
+            </ul>
+        </div>
+
+
+        <div class="footer-col footer-col-social-media">
+            <hr class="footer-divider">
+            <a href="https://wa.me/+584120650347/" target="_blank" rel="noopener noreferrer">
+              <i class="ri-whatsapp-line"></i>
+            </a>
+            <br>
+            <a href="https://www.instagram.com/sanchez__hermes/" target="_blank" rel="noopener noreferrer">
+              <i class="ri-instagram-line"></i>
+            </a>
+        </div>
+    </div>
+    <a href="#" class="back-to-top">▲</a>
 </footer>
 
-    <script src="script.js"></script>
+
+
 </body>
 </html>

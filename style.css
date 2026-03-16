@@ -1213,3 +1213,43 @@ body {
       font-size: 28px;
     }
   }
+
+  .custom-asymmetric-block {
+    display: flex;
+    gap: 15px; /* Espaciado consistente con tu galería */
+    max-width: 1200px;
+    margin: 20px auto;
+    align-items: stretch;
+}
+
+/* La vertical toma el 50% del ancho */
+.custom-asymmetric-block .vertical {
+    flex: 1;
+}
+
+/* El contenedor de las horizontales toma el otro 50% */
+.horizontal-stack {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.custom-asymmetric-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la estética limpia de la serie */
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.custom-asymmetric-block img:hover {
+    opacity: 0.85;
+}
+
+/* Responsive: En móviles se apilan todas verticalmente */
+@media (max-width: 768px) {
+    .custom-asymmetric-block {
+        flex-direction: column;
+    }
+}

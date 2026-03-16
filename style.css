@@ -43,7 +43,7 @@ body {
 }
 
 .navbar a:hover {
-    color: white; /* Un verde sutil como el de la línea */
+    color: #7a9a8a; /* Un verde sutil como el de la línea */
 }
 
 /* Contenedor Principal */

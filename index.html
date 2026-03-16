@@ -249,20 +249,27 @@
     </div>
 
     <div class="contact-container">
-        <form id="contact-form" class="contact-form">
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/mdawwpnd" method="POST">            
             <div class="form-group">
                 <input type="text" id="name" name="name" placeholder="Nombre" required>
             </div>
+            
             <div class="form-group">
                 <input type="email" id="email" name="email" placeholder="Correo" required>
             </div>
+            
             <div class="form-group">
                 <input type="text" id="subject" name="subject" placeholder="Asunto">
             </div>
+            
             <div class="form-group">
                 <textarea id="message" name="message" rows="5" placeholder="Mensaje" required></textarea>
             </div>
+
+            <input type="hidden" name="_subject" value="Nuevo contacto desde la web">
+
             <button type="submit" class="submit-btn">ENVIAR MENSAJE</button>
+            <div id="form-status" style="margin-top: 15px; font-size: 0.9em;"></div>
         </form>
 
         <div class="contact-info">
@@ -272,10 +279,19 @@
                 <p>Desde Caracas, Venezuela</p>
             </div>
             <div class="info-block">
-                <p><strong>Email:</strong> hermessamuelsanchez@gmail.com</p>
-                <p><strong>Instagram:</strong> @sanchez__hermes</p>
+                <p>
+                    <strong>Email:</strong> 
+                    <a href="#" id="email-link" class="contact-link">Mostrar correo</a>
+                    <span id="copy-status" style="margin-left: 10px; font-size: 0.8em; color: #888; display: none;">¡Copiado!</span>
+                </p>
+                <p>
+                    <strong>Instagram:</strong> 
+                    <a href="https://www.instagram.com/sanchez__hermes" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        @sanchez__hermes
+                    </a>
+                </p>
             </div>
-            <div class="info-block">
+                        <div class="info-block">
                 <p class="studio-note">Para consultas de impresión o colaboraciones, utilice el formulario o comuníquese directamente por correo electrónico.</p>
             </div>
         </div>
@@ -313,3 +329,77 @@
 
 </body>
 </html>
+
+<script>
+  const form = document.getElementById("contact-form");
+  
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const status = document.getElementById("form-status");
+    const data = new FormData(event.target);
+    
+    // Cambiamos el texto del botón para dar feedback
+    const btn = form.querySelector('.submit-btn');
+    const originalBtnText = btn.innerHTML;
+    btn.innerHTML = "ENVIANDO...";
+    btn.disabled = true;
+
+    fetch(event.target.action, {
+      method: 'POST',
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.style.color = "#4CAF50"; // Verde éxito
+        status.innerHTML = "¡Gracias! Tu mensaje ha sido enviado.";
+        form.reset();
+
+      } else {
+        response.json().then(data => {
+          status.style.color = "#f44336"; // Rojo error
+          if (Object.hasOwn(data, 'errors')) {
+            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+          } else {
+            status.innerHTML = "Oops! Hubo un problema al enviar tu formulario.";
+          }
+        })
+      }
+    }).catch(error => {
+      status.style.color = "#f44336";
+      status.innerHTML = "Oops! Hubo un problema de conexión.";
+    }).finally(() => {
+      btn.innerHTML = originalBtnText;
+      btn.disabled = false;
+    });
+  }
+
+  form.addEventListener("submit", handleSubmit);
+</script>
+<script>
+document.getElementById('email-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const user = "hermessamuelsanchez";
+    const domain = "gmail.com";
+    const fullEmail = user + "@" + domain;
+    const status = document.getElementById('copy-status');
+
+    // Estado 1: Si todavía no se ha revelado el correo
+    if (this.innerText === "Mostrar correo") {
+        this.innerText = fullEmail;
+        //window.location.href = "mailto:" + fullEmail;
+    } 
+    // Estado 2: Si ya está revelado, lo copia al portapapeles
+    else {
+        navigator.clipboard.writeText(fullEmail).then(() => {
+            // Mostrar mensaje de "¡Copiado!" brevemente
+            status.style.display = "inline";
+            setTimeout(() => {
+                status.style.display = "none";
+            }, 2000);
+        });
+    }
+});
+</script>

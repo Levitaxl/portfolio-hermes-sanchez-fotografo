@@ -1253,3 +1253,16 @@ body {
         flex-direction: column;
     }
 }
+
+
+.info-block a {
+    text-decoration: none;
+    color: gray;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.info-block a:hover {
+    color: #7a9a8a; /* Un verde sutil como el de la línea */
+}

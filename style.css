@@ -341,10 +341,11 @@ body {
 
 .info-block {
     margin-bottom: 30px;
+    color: #a7a7a7;
 }
 
 .info-block h4 {
-    color: #333;
+    
     margin-bottom: 10px;
     letter-spacing: 1px;
 }
@@ -502,7 +503,7 @@ body {
     font-size: 3.5rem;
     font-weight: 400;
     line-height: 0.9;
-    color: white; /* Gris similar al de la captura */
+    color: #a7a7a7; /* Gris similar al de la captura */
     margin: 0;
     letter-spacing: -1px;
 }
@@ -587,7 +588,7 @@ body {
     flex: 1;
     font-size: 0.95rem;
     line-height: 1.7;
-    color: white;
+    color: #a7a7a7;
     text-align: justify;
 }
 
@@ -688,7 +689,7 @@ body {
     flex: 1;
     font-size: 0.9rem;
     line-height: 1.8;
-    color: #666;
+    color: #a7a7a7;
     text-align: justify;
 }
 

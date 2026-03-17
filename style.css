@@ -706,7 +706,7 @@ body {
 /* Contenedor de Detalle */
 .detail-container {
     max-width: 1100px;
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
@@ -739,13 +739,6 @@ body {
 }
 
 
-/*
-.gallery-item:hover img {
-    opacity: 0.8;
-}
-    */
-
-/* Mobile */
 @media (max-width: 768px) {
     .series-description {
         flex-direction: column;
@@ -756,34 +749,28 @@ body {
     }
 }
 
-/* Contenedor de la Galería */
+
 .gallery-grid {
-    /* Define el número de columnas */
     column-count: 3; 
-    /* Espacio entre columnas */
     column-gap: 15px; 
     max-width: 1200px;
     margin: 40px auto;
 }
 
-/* Cada ítem de la galería */
+
 .gallery-item {
-    /* EVITA que una imagen se parta entre dos columnas */
     display: inline-block;
     width: 100%;
-    margin-bottom: 15px; /* Espacio vertical entre fotos */
+    margin-bottom: 15px;
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto; /* Mantiene la proporción real intacta */
+    height: auto;
     display: block;
     transition: opacity 0.3s ease;
 }
 
-/* Ajustes de Responsividad */
-
-/* Tablets: 2 columnas */
 @media (max-width: 900px) {
     .gallery-grid {
         column-count: 2;
@@ -1084,7 +1071,6 @@ body {
     padding: 80px 40px 40px;
     color: white;
     border-top: 1px solid #222; /* Una línea sutil para separar */
-    margin-top: 100px;
 }
 
 /* Botones con tu verde #7a9a8a */

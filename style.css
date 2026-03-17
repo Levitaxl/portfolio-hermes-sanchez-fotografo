@@ -1352,3 +1352,9 @@ body {
     opacity: 0.1;
     pointer-events: none;
 }
+
+.project-title {
+    color: #ebebeb; 
+    font-weight: 500; 
+    letter-spacing: 0.5px;
+}

@@ -1297,6 +1297,14 @@ body {
     .custom-asymmetric-block {
         flex-direction: column;
     }
+
+    
+}
+
+@media (max-width: 600px) {
+    .medium-image-feature, .small-image-feature{
+        width: 100%;
+    }
 }
 
 

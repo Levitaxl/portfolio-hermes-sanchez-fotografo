@@ -47,3 +47,53 @@ const lightbox = document.getElementById('lightbox');
             if (e.key === "Escape") lightbox.style.display = 'none';
         }
     });
+
+
+    // 1. Aquí configuras el orden de tus series
+const seriesOrder = [
+    { url: "peso-del-aire-en-la-habitacion.html", title: "El peso del aire en la habitación" },
+    { url: "caminando-por-ahi.html", title: "Caminando por ahí" },
+    { url: "casco-es-pa-pussies.html", title: "Casco es pa pussies" }
+];
+
+function generateSeriesNav() {
+    const container = document.getElementById('series-nav-container');
+    if (!container) return;
+
+    // Obtener el nombre del archivo actual
+    const currentPath = window.location.pathname.split("/").pop();
+    
+    // Buscar la posición actual
+    const currentIndex = seriesOrder.findIndex(series => series.url === currentPath);
+
+    if (currentIndex === -1) return; 
+
+    // LÓGICA CÍCLICA
+    // Si es el primero, el anterior es el último. Si no, es el actual - 1.
+    const prevIndex = (currentIndex === 0) ? seriesOrder.length - 1 : currentIndex - 1;
+    
+    // Si es el último, el siguiente es el primero. Si no, es el actual + 1.
+    const nextIndex = (currentIndex === seriesOrder.length - 1) ? 0 : currentIndex + 1;
+
+    const prevSeries = seriesOrder[prevIndex];
+    const nextSeries = seriesOrder[nextIndex];
+
+    // Construir el HTML (Ya no necesitamos los divs "disabled" porque siempre habrá contenido)
+    container.innerHTML = `
+        <section class="series-navigation">
+            <div class="nav-links">
+                <a href="${prevSeries.url}" class="nav-series prev">
+                    <i class="ri-arrow-left-s-line"></i>
+                    <span>${prevSeries.title}</span>
+                </a>
+
+                <a href="${nextSeries.url}" class="nav-series next">
+                    <span>${nextSeries.title}</span>
+                    <i class="ri-arrow-right-s-line"></i>
+                </a>
+            </div>
+        </section>
+    `;
+}
+
+document.addEventListener('DOMContentLoaded', generateSeriesNav);

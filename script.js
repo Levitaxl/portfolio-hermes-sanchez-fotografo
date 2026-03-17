@@ -97,3 +97,21 @@ function generateSeriesNav() {
 }
 
 document.addEventListener('DOMContentLoaded', generateSeriesNav);
+
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.gallery-item img');
+
+    images.forEach(img => {
+        // Si la imagen ya está en caché y cargó instantáneamente
+        if (img.complete) {
+            img.classList.add('loaded');
+            img.parentElement.classList.add('has-loaded');
+        }
+
+        // Evento para cuando termine de cargar
+        img.addEventListener('load', function() {
+            img.classList.add('loaded');
+            img.parentElement.classList.add('has-loaded');
+        });
+    });
+});

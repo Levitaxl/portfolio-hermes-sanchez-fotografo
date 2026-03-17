@@ -1358,3 +1358,36 @@ body {
     font-weight: 500; 
     letter-spacing: 0.5px;
 }
+
+/* Contenedor de la imagen */
+.gallery-item {
+    position: relative;
+    background-color: #1a1a1a; /* Fondo gris muy oscuro mientras carga */
+    overflow: hidden;
+    min-height: 200px; /* Evita que el contenedor colapse si no hay altura definida */
+}
+
+/* Estado inicial de la imagen (oculta) */
+.gallery-item img {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Clase que aplicaremos con JS cuando la imagen cargue */
+.gallery-item img.loaded {
+    opacity: 1;
+}
+
+/* Opcional: Un pequeño pulso de luz (Skeleton effect) */
+@keyframes pulse {
+    0% { background-color: #1a1a1a; }
+    50% { background-color: #252525; }
+    100% { background-color: #1a1a1a; }
+}
+
+.gallery-item:not(.has-loaded) {
+    animation: pulse 1.5s infinite ease-in-out;
+}

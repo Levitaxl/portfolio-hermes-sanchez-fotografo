@@ -53,7 +53,6 @@ const lightbox = document.getElementById('lightbox');
 const seriesOrder = [
     { url: "peso-del-aire-en-la-habitacion.html", title: "El peso del aire en la habitación" },
     { url: "caminando-por-ahi.html", title: "Caminando por ahí" },
-    { url: "casco-es-pa-pussies.html", title: "Casco es pa pussies" },
     { url: "gritos-de-oracion.html", title: "Gritos de oración" }
 ];
 

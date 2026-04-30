@@ -1,0 +1,13 @@
+# Grupo 1: Todos los buscadores (Google, Bing, Yahoo, etc.)
+User-agent: *
+
+# Carpetas que NO quieres que se indexen (ejemplo: archivos internos o assets)
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /series/*.json$
+
+# Permitir todo lo demás
+Allow: /
+
+# Enlace directo a tu Sitemap (Cambia la URL si no es esta)
+Sitemap: https://hermessanchez.com/sitemap.xml

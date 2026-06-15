@@ -110,10 +110,11 @@ document.addEventListener('keydown', (e) => {
 
 // 1. Aquí configuras el orden de tus series
 const seriesOrder = [
+    { url: "los-rostros-detras-de-mito.html", title: "Los rostros detrás del mito" },
+    { url: "gritos-de-oracion.html", title: "Gritos de oración" },
     { url: "peso-del-aire-en-la-habitacion.html", title: "El peso del aire en la habitación" },
     { url: "caminando-por-ahi.html", title: "Caminando por ahí" },
-    { url: "gritos-de-oracion.html", title: "Gritos de oración" },
-    { url: "los-rostros-detras-de-mito.html", title: "Los Rostros detras del Mito" }
+
 ];
 
 function generateSeriesNav() {

@@ -493,9 +493,7 @@ document.getElementById('email-link').addEventListener('click', function(e) {
         { src: "./assets/retratos/MG_2763.avif", url: "./retratos.html#MG_2763" },
         { src: "./assets/gritos-de-oracion/IMG_6818.avif", url: "./series/gritos-de-oracion.html" },
         { src: "./assets/retratos/IMG_4263.avif", url: "./retratos.html#IMG_4263" },
-
         { src: "./assets/peso-del-aire-en-la-habitacion/11.AVIF", url: "./series/peso-del-aire-en-la-habitacion.html" },
-        { src: "./assets/general/1000213077.AVIF", url: "./series/caminando-por-ahi.html" }
     ];
     
     
@@ -508,36 +506,30 @@ document.getElementById('email-link').addEventListener('click', function(e) {
 
     function iniciarCiclo() {
         setTimeout(() => {
-            // Si el mouse está encima, no cambiamos la imagen, 
-            // esperamos 1 segundo y volvemos a preguntar.
             if (isPaused) {
                 iniciarCiclo(); 
                 return;
             }
 
-            // Iniciar transición de salida
             imgElement.classList.add("fade-out");
 
             setTimeout(() => {
                 indiceActual = (indiceActual + 1) % seriesData.length;
                 
-                // Actualizamos imagen y el enlace del <a>
                 imgElement.src = seriesData[indiceActual].src;
                 linkElement.href = seriesData[indiceActual].url;
                 
-                // Reiniciar animación
                 imgElement.classList.remove("zoom-animation");
                 void imgElement.offsetWidth; 
                 imgElement.classList.add("zoom-animation");
                 
                 imgElement.classList.remove("fade-out");
                 
-                // Volver a llamar a la función
                 iniciarCiclo();
 
-            }, 800); // Duración del fade
+            }, 800); 
 
-        }, 4000); // Tiempo de espera entre fotos
+        }, 4000);
     }
 
     // Inicializar el primer link
